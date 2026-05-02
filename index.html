@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <title>Prodigy Centro Educacional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="./index.html">
+                <img src="./assets/logo.png" class="logo" alt="Logo da Escola">
+            </a>
+
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+
+            <nav class="nav" id="nav">
+                <ul class="menu">
+                    <li><a href="#">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" id="btn-cursos">Cursos <span class="seta">▼</span></a>
+
+                        <ul class="dropdown-menu" id="menu-cursos">
+                            <li><a href="">INGLÊS</a></li>
+                            <li><a href="">ESPANHOL</a></li>
+                            <li><a href="">ALEMÃO</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="">Professores</a></li>
+                    <li><a href="#faq">Depoimentos</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#formContato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="floating-social" data-aos="fade-up">
+        <a href="https://www.instagram.com/prodigy_centroeducacional/" target="_blank" rel="noopener"
+            aria-label="Instagram">
+            <img src="./assets/Instagram.svg" alt="Instagram Prodigy" class="social-icon">
+        </a>
+        <a href="https://wa.me/555197692906?text=Olá, gostaria de agendar uma aula experimental!" target="_blank"
+            rel="noopener" aria-label="WhatsApp">
+            <img src="./assets/whatsapp.png" alt="WhatsApp Prodigy" class="social-icon">
+        </a>
+    </div>
+
+    <section class="hero">
+        <div class="caixahero">
+            <h2>Aprender idiomas pode ser leve, natural e transformador</h2>
+            <p>Inglês, espanhol e alemão para todas as idades</p>
+            <a href="https://wa.me/555197692906?text=Olá, gostaria de agendar uma aula experimental!" class="btn">
+                Agende sua aula experimental
+            </a>
+        </div>
+    </section>
+
+    <h1 class="sobretitulo">Sobre a Prodigy Centro Educacional</h1>
+    <section class="sobrecontainer">
+        <div>
+            <img src="./assets/section.png" alt="img" class="imgsobre">
+        </div>
+        <div class="sobre">
+            <h2>1. Quem Somos</h2>
+            <p> Nascemos com o propósito de tornar o aprendizado de idiomas algo leve, natural e acessível. Acreditamos
+                que aprender vai além da gramática: é sobre comunicação, confiança e vivência real. Oferecemos inglês,
+                espanhol e alemão com foco na prática desde o primeiro dia.</p>
+            <p>
+            <h2>2. Diferenciais e Apoio</h2>
+            <p> Mais do que cursos de idiomas, oferecemos um ambiente acolhedor e acompanhamento escolar
+                individualizado.
+                Nosso foco é fortalecer a base de aprendizagem de crianças, jovens e adultos, respeitando o ritmo de
+                cada aluno e transformando o estudo em uma experiência prazerosa.</p>
+            <h2>3. Missão, Visão e Valores</h2>
+            <p> Nossa missão é despertar o interesse pelo conhecimento através de métodos inovadores, formando alunos
+                protagonistas de suas próprias histórias. Valorizamos a ética, o pensamento crítico e a responsabilidade
+                social, buscando ser um centro educacional referência em inovação e criatividade.</p>
+        </div>
+        </div>
+    </section>
+
+    <section class="chamada-professores container">
+        <div class="professores-grid">
+            <div class="professores-texto">
+                <span>Nossa Equipe</span>
+                <h2>Aprenda com quem ama ensinar</h2>
+                <p>Contamos com professores qualificados e apaixonados por idiomas, prontos para guiar você em cada
+                    passo da sua jornada, do básico à fluência.</p>
+                <a href="#professores-completo" class="btn">Conhecer nossos professores</a>
+            </div>
+            <div class="professores-imagem">
+                <img src="./assets/equipe-prodigy.png" alt="Professores Prodigy">
+            </div>
+        </div>
+    </section>
+
+    <section class="cursos container">
+        <h2>Nossos Cursos</h2>
+        <p class="subtitle">
+            Escolha o idioma ideal para você e comece sua jornada hoje.
+        </p>
+
+        <div class="cards">
+
+            <div class="card" id="ingles">
+                <div class="card-content">
+                    <h3><img src="https://flagcdn.com/w40/us.png" alt="Bandeira EUA"
+                            style="width: 25px; vertical-align: middle; margin-right: 8px;">
+                        Inglês</h3>
+                    <p>Foque na comunicação real desde a primeira aula.</p>
+                    <a href="#" class="btn-card">Saiba mais</a>
+                </div>
+            </div>
+
+            <div class="card" id="espanhol">
+                <div class="card-content">
+                    <h3><img src="https://flagcdn.com/w40/es.png" alt="Bandeira Espanha"
+                            style="width: 25px; vertical-align: middle; margin-right: 8px;"> Espanhol</h3>
+                    <p>Aprenda rápido aproveitando a proximidade com o português.</p>
+                    <a href="#" class="btn-card">Saiba mais</a>
+                </div>
+            </div>
+
+            <div class="card" id="alemao">
+                <div class="card-content">
+                    <h3><img src="https://flagcdn.com/w40/de.png" alt="Bandeira Alemanha"
+                            style="width: 25px; vertical-align: middle; margin-right: 8px;"> Alemão</h3>
+                    <p>Metodologia clara para dominar até o idioma mais desafiador.</p>
+                    <a href="#" class="btn-card">Saiba mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="info-section" id="faq">
+
+        <div class="faq">
+            <h2>Perguntas Frequentes</h2>
+
+            <div class="faq-item">
+                <h3>As aulas são para iniciantes?</h3>
+                <p>Sim! Temos turmas do básico ao avançado.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Tem aula para crianças?</h3>
+                <p>Sim, a partir de 3 anos.</p>
+            </div>
+        </div>
+
+        <div class="depoimentos">
+            <div class="carousel">
+                <h2>Depoimentos</h2>
+
+                <div class="item active">
+                    <h3>Renan Siebert</h3>
+                    <p>"Ótima escola, aprendi muito rápido!"</p>
+                </div>
+
+                <div class="item">
+                    <h3>Camila Goelzer</h3>
+                    <p>"Professores excelentes e ambiente incrível."</p>
+                </div>
+
+                <div class="item">
+                    <h3>Marilice Patzlaff</h3>
+                    <p>"Recomendo para quem quer aprender de verdade."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form id="formContato">
+        <h1>Entre em Contato Conosco</h1>
+        <div class="formContato">
+            <input type="text" id="nome" name="nome" placeholder="Nome Completo*" required>
+            <input type="tel" id="telefone" name="telefone" placeholder="Telefone (WhatsApp)*" required>
+
+            <select id="idioma" name="idioma" required>
+                <option value="" disabled selected>Idioma de interesse*</option>
+                <option value="Inglês">Inglês</option>
+                <option value="Espanhol">Espanhol</option>
+                <option value="Alemão">Alemão</option>
+            </select>
+
+            <select id="origem" name="origem" required>
+                <option value="" disabled selected>Como nos conheceu?*</option>
+                <option value="Instagram">Instagram</option>
+                <option value="Indicação">Indicação</option>
+                <option value="Google">Google</option>
+                <option value="Outro">Outro</option>
+            </select>
+        </div>
+
+        <textarea id="mensagem" name="mensagem" placeholder="Alguma dúvida específica?"></textarea>
+
+        <p>Ao clicar, seus dados serão salvos e você falará conosco via WhatsApp.</p>
+        <button type="submit">Enviar e Abrir WhatsApp</button>
+    </form>
+
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217.17075284661416!2d-51.508796105791376!3d-29.436627001620767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951c058410e4000d%3A0xab7d29c170a82e6e!2sAv.%20Duque%20de%20Caxias%2C%20645%20-%20sala%203%20-%20Centro%2C%20Salvador%20do%20Sul%20-%20RS%2C%2095750-000!5e0!3m2!1spt-BR!2sbr!4v1777666833034!5m2!1spt-BR!2sbr"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <footer id="meu-footer" class="footer" data-aos="fade-up">
+
+        <div class="footer-top">
+            <img src="./assets/logo.png" class="footer-logo" alt="Logo">
+        </div>
+        <div class="footer-content">
+            <h4>PRODIGY CENTRO EDUCACIONAL</h4>
+            <p>Av. Duque de Caxias, 645 - sala 3 - Centro</p>
+            <p>Contato: (51) 9769-2906</p>
+            <p>Email: 6lGdD@example.com</p>
+        </div>
+        <div class="footer-bottom">
+            <a href="./index.html" class="voltar-topo">Voltar ao Topo</a>
+            <p>Desenvolvido por
+                <a href="https://www.linkedin.com/in/renansiebert/" target="_blank" class="voltar-topo">
+                    Renan Siebert
+                </a>
+            </p>
+            © 2026 - Prodigy Centro Educacional. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
