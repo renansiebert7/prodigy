@@ -7,8 +7,6 @@
 
 html {
     scroll-behavior: smooth;
-    /* Isso compensa a altura do seu header fixo para que o título 
-       da seção não fique escondido atrás dele */
     scroll-padding-top: 100px;
 }
 
@@ -179,11 +177,11 @@ h3 {
     text-decoration: none;
 }
 
-/* sobre */
+/* SOBRE */
 .sobretitulo {
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    margin-top: 120px;
+    margin-top: 60px;
     font-size: 40px;
     color: rgb(158, 17, 17);
     font-weight: bolder;
@@ -195,6 +193,7 @@ h3 {
     flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
+    padding: 50px 20px;
     gap: 100px;
     flex-wrap: wrap;
 }
@@ -221,8 +220,7 @@ h3 {
     object-fit: cover;
 }
 
-/* btn */
-
+/* BOTAO (PADRÃO) */
 .btn {
     margin-top: 20px;
     padding: 14px 28px;
@@ -287,8 +285,7 @@ h3 {
     transform: scale(1.02);
 }
 
-/* cursos */
-
+/* CURSOS */
 .cursos {
     text-align: center;
 }
@@ -442,7 +439,6 @@ h3 {
 }
 
 /* FAQ (ACCORDION MODERNO) */
-
 .faq {
     width: 100%;
     height: 100%;
@@ -685,6 +681,7 @@ iframe {
     margin-bottom: 0;
 }
 
+/* SESSIONS PADDING */
 section,
 #faq,
 #formContato {
@@ -707,6 +704,18 @@ section,
     .faq-item {
         padding: 16px;
     }
+
+    .sobretitulo {
+        margin-top: 60px;
+        font-size: 32px;
+        margin-bottom: 50px;
+    }
+
+    .sobrecontainer {
+        gap: 30px;
+        padding: 0 20px;
+    }
+
 }
 
 /* MOBILE*/
@@ -726,12 +735,32 @@ section,
         padding: 25px 20px;
     }
 
-    .faq {
-        gap: 10px;
+    #faq {
+        margin-top: 60px;
     }
 
+    .info-section {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+        gap: 30px;
+        box-shadow: none;
+    }
+
+    .carousel,
     .faq-item {
-        padding: 14px;
+        height: auto;
+        padding: 25px 20px;
+    }
+
+    .carousel p {
+        font-size: 1rem;
+        font-style: italic;
+    }
+
+    .faq h2,
+    .carousel h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
     }
 
     .header {
@@ -754,7 +783,14 @@ section,
     }
 
     .sobretitulo {
-        font-size: 30px;
+        margin-top: 60px;
+        font-size: 28px;
+        margin-bottom: 50px;
+    }
+
+    .sobrecontainer {
+        gap: 30px;
+        padding: 0 20px;
     }
 
     .menu {
@@ -894,10 +930,7 @@ section,
     }
 }
 
-
-/* ===============================
-   RESPONSIVIDADE (MOBILE)
-================================ */
+/* RESPONSIVIDADE (MOBILE)*/
 @media (max-width: 600px) {
     #formContato {
         padding: 20px;

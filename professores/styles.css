@@ -1,0 +1,494 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+/*  PALETA MODERNA */
+:root {
+    --primary: #d62828;
+    --primary-dark: #9d0208;
+    --accent: #ffba08;
+
+    --bg: #ffffff;
+    --bg-soft: #f7f7f7;
+    --bg-glass: rgba(255, 255, 255, 0.7);
+
+    --text: #1d1d1d;
+    --text-light: #666;
+
+    --radius: 14px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    --section-spacing: 100px;
+    --section-spacing-mobile: 60px;
+}
+
+/* BASE */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* TITULOS */
+h1,
+h2 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* HEADER (MODERNO) */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    backdrop-filter: blur(10px);
+    background: var(--bg-glass);
+    border-bottom: 1px solid #eee;
+    z-index: 999;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LOGO */
+.logo {
+    height: 80px;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.logo:active {
+    opacity: 0.5;
+}
+
+/* MENU */
+.menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.menu a {
+    color: var(--text);
+    text-decoration: none;
+    position: relative;
+}
+
+.menu a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: var(--primary);
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.menu a:hover {
+    color: var(--primary);
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: none;
+    overflow: hidden;
+}
+
+.dropdown-menu.active {
+    display: block;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 12px 18px;
+}
+
+.dropdown-menu li a:hover {
+    background: var(--bg-soft);
+}
+
+/* PÁGINA DE PROFESSORES */
+.professores-page {
+    padding: 100px 20px;
+    background-color: #fdfdfd;
+}
+
+.intro-professores {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.intro-professores h2 {
+    font-size: 36px;
+    color: var(--primary);
+}
+
+.grid-professores {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Card Estilo "Bio" */
+.card-professor {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.card-professor:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Foto do Professor */
+.foto-container {
+    position: relative;
+    flex-shrink: 0;
+    margin-right: 40px;
+}
+
+.foto-perfil,
+.foto-placeholder {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--bg-soft);
+}
+
+.foto-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e0e0e0;
+    font-size: 40px;
+    color: #999;
+}
+
+/* Tag de Idioma flutuando na foto */
+.idioma-tag {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: var(--primary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.info-professor h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.formacao {
+    display: block;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.bio-texto p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #830000;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin-top: -10px;
+}
+
+.footer-top {
+    background: #830000;
+    text-align: center;
+}
+
+.footer-logo {
+    margin-top: 10px;
+    height: 120px;
+    position: relative;
+    padding: 10px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    align-items: center;
+    padding: 30px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 13px;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.voltar-topo {
+    text-decoration: none;
+    color: white !important;
+    font-size: 14px;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+
+.voltar-topo:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+/* SOCIAL FLOAT */
+.floating-social {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    z-index: 99999 !important;
+}
+
+.social-icon {
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.3)) !important;
+}
+
+.floating-social img {
+    width: 50px;
+    margin-top: 3px;
+    transition: 0.3s;
+    z-index: 9999999 !important;
+    pointer-events: all;
+}
+
+.floating-social img:hover {
+    transform: scale(1.1);
+}
+
+/* MOBILE */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+}
+
+/* MOBILE*/
+
+@media (max-width: 768px) {
+    .header {
+        height: 100px;
+    }
+
+    .header .container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo {
+        position: absolute;
+        left: 50%;
+        top: 10px;
+        transform: translateX(-50%);
+        height: 70px;
+    }
+
+    .sobretitulo {
+        font-size: 30px;
+    }
+
+    .menu {
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: 0.3s;
+    }
+
+    .nav.active .menu {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 50px;
+        top: 30px;
+        font-size: 26px;
+        cursor: pointer;
+    }
+
+    .dropdown-menu {
+        display: block !important;
+        position: static;
+        box-shadow: none;
+        background: transparent;
+        padding-left: 10px;
+        margin-top: 5px;
+    }
+
+    .seta {
+        transform: rotate(180deg);
+    }
+
+    .dropdown-menu li a {
+        font-size: 14px;
+        color: var(--text-light);
+        padding: 6px 0;
+    }
+
+    .dropdown-menu li a {
+        padding: 8px 0;
+    }
+
+    .dropdown-menu.active {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        left: 20px;
+        top: 80px;
+        right: auto;
+        width: 220px;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        display: none;
+    }
+
+    .nav.active .menu {
+        display: flex;
+    }
+
+    .floating-social img {
+        width: 30px;
+        margin-top: 0;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .nav.active {
+        height: auto;
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+
+    .dropdown-menu.active {
+        display: block !important;
+        position: static !important;
+        width: 100%;
+    }
+
+    .floating-social img {
+        width: 30px;
+        margin-top: 0;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .card-professor {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .foto-container {
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+
+    .foto-perfil,
+    .foto-placeholder {
+        width: 140px;
+        height: 140px;
+    }
+
+    .intro-professores {
+        margin-top: 30px;
+    }
+
+    .intro-professores h2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        padding: 20px 15px;
+        text-align: center;
+        gap: 5px;
+    }
+}

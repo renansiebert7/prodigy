@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -9,32 +9,122 @@
 </head>
 
 <body>
+    <header class="header">
+        <div class="container">
+            <a href="../index.html">
+                <img src="../assets/logo.png" class="logo" alt="Logo da Escola">
+            </a>
 
-    <section class="professores container" id="professores">
-        <h2>Professores</h2>
+            <div class="menu-toggle" id="menu-toggle">☰</div>
 
-        <div class="cards">
-            <div class="card">
-                <img src="../assets/professor1.png" alt="professor1">
-                <h3>Teacher William</h3>
-                <p>
-                    Estudante de Letras–Inglês com 9 anos de experiência. Ensinar vai além da gramática: é abrir portas
-                    e transformar vidas.
-                </p>
+            <nav class="nav" id="nav">
+                <ul class="menu">
+                    <li><a href="../index.html">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" id="btn-cursos">Cursos <span class="seta">▼</span></a>
+
+                        <ul class="dropdown-menu" id="menu-cursos">
+                            <li><a href="../ingles/">INGLÊS</a></li>
+                            <li><a href="../espanhol/">ESPANHOL</a></li>
+                            <li><a href="../alemao/">ALEMÃO</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="../professores/">Professores</a></li>
+                    <li><a href="../index.html#faq">Depoimentos</a></li>
+                    <li><a href="../index.html#faq">FAQ</a></li>
+                    <li><a href="../index.html#formContato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="floating-social" data-aos="fade-up">
+        <a href="https://www.instagram.com/prodigy_centroeducacional/" target="_blank" rel="noopener"
+            aria-label="Instagram">
+            <img src="../assets/Instagram.svg" alt="Instagram Prodigy" class="social-icon">
+        </a>
+        <a href="https://wa.me/555197692906?text=Olá, gostaria de agendar uma aula experimental!" target="_blank"
+            rel="noopener" aria-label="WhatsApp">
+            <img src="../assets/whatsapp.png" alt="WhatsApp Prodigy" class="social-icon">
+        </a>
+    </div>
+
+    <section class="professores-page container">
+        <div class="intro-professores">
+            <h2>Nossa Equipe de Experts</h2>
+            <p>Conheça os profissionais apaixonados que transformarão seu aprendizado.</p>
+        </div>
+
+        <div class="grid-professores">
+            <div class="card-professor" data-aos="fade-up">
+                <div class="foto-container">
+                    <img src="../assets/professor1.png" alt="Teacher William" class="foto-perfil">
+                    <div class="idioma-tag">Inglês</div>
+                </div>
+                <div class="info-professor">
+                    <h3>Teacher William</h3>
+                    <span class="formacao">Letras – Inglês (UCS)</span>
+                    <div class="bio-texto">
+                        <p>William estuda a língua inglesa há cerca de nove anos e acredita que ensinar vai muito além
+                            de regras gramaticais: trata-se de abrir portas.</p>
+                        <p>Para ele, o inglês é uma ferramenta transformadora que possibilita acesso a melhores
+                            oportunidades acadêmicas e culturais.</p>
+                    </div>
+                    <div class="social-links">
+                    </div>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>Professora</h3>
-                <p>(Aguardando informações)</p>
+            <div class="card-professor" data-aos="fade-up">
+                <div class="foto-container">
+                    <div class="foto-placeholder">?</div>
+                    <div class="idioma-tag tag-espanhol">Espanhol</div>
+                </div>
+                <div class="info-professor">
+                    <h3>Professora</h3>
+                    <span class="formacao">Especialista em Idiomas</span>
+                    <p>Aguardando informações sobre a trajetória desta profissional incrível.</p>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>Professora</h3>
-                <p>(Aguardando informações)</p>
+            <div class="card-professor" data-aos="fade-up">
+                <div class="foto-container">
+                    <div class="foto-placeholder">?</div>
+                    <div class="idioma-tag tag-alemao">Alemão</div>
+                </div>
+                <div class="info-professor">
+                    <h3>Professora</h3>
+                    <span class="formacao">Especialista em Idiomas</span>
+                    <p>Aguardando informações sobre a trajetória desta profissional incrível.</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <footer id="meu-footer" class="footer" data-aos="fade-up">
+
+        <div class="footer-top">
+            <img src="../assets/logo.png" class="footer-logo" alt="Logo">
+        </div>
+        <div class="footer-content">
+            <h4>PRODIGY CENTRO EDUCACIONAL</h4>
+            <p>Av. Duque de Caxias, 645 - sala 3 - Centro</p>
+            <p>Contato: (51) 9769-2906</p>
+            <p>Email: 6lGdD@example.com</p>
+        </div>
+        <div class="footer-bottom">
+            <a href="./index.html" class="voltar-topo">Voltar ao Topo</a>
+            <p>Desenvolvido por
+                <a href="https://www.linkedin.com/in/renansiebert/" target="_blank" class="voltar-topo">
+                    Renan Siebert
+                </a>
+            </p>
+            © 2026 - Prodigy Centro Educacional. Todos os direitos reservados.
+        </div>
+    </footer>
+    <script src="./script.js"></script>
 </body>
 
 </html>

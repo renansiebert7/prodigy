@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Inglês</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="../index.html">
+                <img src="../assets/logo.png" class="logo" alt="Logo da Escola">
+            </a>
+
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+
+            <nav class="nav" id="nav">
+                <ul class="menu">
+                    <li><a href="../index.html">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" id="btn-cursos">Cursos <span class="seta">▼</span></a>
+
+                        <ul class="dropdown-menu" id="menu-cursos">
+                            <li><a href="../ingles/">INGLÊS</a></li>
+                            <li><a href="../espanhol/">ESPANHOL</a></li>
+                            <li><a href="../alemao/">ALEMÃO</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="../professores/">Professores</a></li>
+                    <li><a href="../index.html#faq">Depoimentos</a></li>
+                    <li><a href="../index.html#faq">FAQ</a></li>
+                    <li><a href="../index.html#formContato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="floating-social" data-aos="fade-up">
+        <a href="https://www.instagram.com/prodigy_centroeducacional/" target="_blank" rel="noopener"
+            aria-label="Instagram">
+            <img src="../assets/Instagram.svg" alt="Instagram Prodigy" class="social-icon">
+        </a>
+        <a href="https://wa.me/555197692906?text=Olá, gostaria de agendar uma aula experimental!" target="_blank"
+            rel="noopener" aria-label="WhatsApp">
+            <img src="../assets/whatsapp.png" alt="WhatsApp Prodigy" class="social-icon">
+        </a>
+    </div>
+
+    <main class="curso-page">
+        <section class="curso-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="tag">Language Program</span>
+                    <h1>Curso de Inglês</h1>
+                    <p class="desc-principal">Aprenda de forma natural e progressiva, com foco total na comunicação
+                        desde a primeira aula.</p>
+                    <a href="https://wa.me/555197692906?text=Olá, gostaria de agendar uma aula experimental!"
+                        class="btn-primary">Quero agendar uma aula experimental</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="curso-detalhes container">
+            <div class="grid-detalhes">
+                <div class="info-card">
+                    <div class="icon">🗣️</div>
+                    <h4>Foco em Speaking</h4>
+                    <p>Muito estímulo à conversação para você falar com confiança.</p>
+                </div>
+                <div class="info-card">
+                    <div class="icon">🎮</div>
+                    <h4>Metodologia Ativa</h4>
+                    <p>Atividades interativas, jogos e situações reais do dia a dia.</p>
+                </div>
+                <div class="info-card">
+                    <div class="icon">🚀</div>
+                    <h4>Progressão Natural</h4>
+                    <p>Evolua com segurança da base até os níveis avançados.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="curso-texto container">
+            <div class="texto-wrapper">
+                <h2>Como funciona o aprendizado?</h2>
+                <p>Trabalhamos todas as habilidades — fala, escuta, leitura e escrita — integradas em um ambiente
+                    dinâmico. O aluno não apenas decora regras, mas aprende a utilizá-las em contextos práticos,
+                    ganhando segurança para se comunicar em qualquer situação.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="meu-footer" class="footer" data-aos="fade-up">
+
+        <div class="footer-top">
+            <img src="../assets/logo.png" class="footer-logo" alt="Logo">
+        </div>
+        <div class="footer-content">
+            <h4>PRODIGY CENTRO EDUCACIONAL</h4>
+            <p>Av. Duque de Caxias, 645 - sala 3 - Centro</p>
+            <p>Contato: (51) 9769-2906</p>
+            <p>Email: 6lGdD@example.com</p>
+        </div>
+        <div class="footer-bottom">
+            <a href="./index.html" class="voltar-topo">Voltar ao Topo</a>
+            <p>Desenvolvido por
+                <a href="https://www.linkedin.com/in/renansiebert/" target="_blank" class="voltar-topo">
+                    Renan Siebert
+                </a>
+            </p>
+            © 2026 - Prodigy Centro Educacional. Todos os direitos reservados.
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggle = document.getElementById("menu-toggle");
+            const nav = document.getElementById("nav");
+            const btnCursos = document.getElementById("btn-cursos");
+            const menuCursos = document.getElementById("menu-cursos");
+
+            toggle.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                nav.classList.toggle("active");
+            });
+
+            btnCursos.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                menuCursos.classList.toggle("active");
+            });
+
+            const linksNavegacao = document.querySelectorAll('.menu a:not(#btn-cursos)');
+
+            linksNavegacao.forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove("active");
+                    menuCursos.classList.remove("active");
+                });
+            });
+
+            document.addEventListener("click", (e) => {
+                if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+                    nav.classList.remove("active");
+                    menuCursos.classList.remove("active");
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
