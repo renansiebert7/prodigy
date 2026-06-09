@@ -304,7 +304,7 @@ h3 {
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
+    gap: 25px;
     margin-top: 50px;
 }
 
@@ -313,7 +313,6 @@ h3 {
     border-radius: 18px;
     overflow: hidden;
     max-height: 260px;
-    max-width: 400px;
     display: flex;
     align-items: flex-end;
     box-shadow: 2px 2px 2px 2px rgb(0 0 0 / 10%);
@@ -368,10 +367,6 @@ h3 {
 
 #espanhol {
     background: linear-gradient(135deg, #c60b1e, #ffc400);
-}
-
-#alemao {
-    background: linear-gradient(135deg, #000000, #dd0000, #ffce00);
 }
 
 /* DEPOIMENTOS E FAQ*/
