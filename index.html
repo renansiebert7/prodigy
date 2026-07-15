@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="icon" type="image/png" href="./assets/favicon.png">
     <title>Prodigy Centro Educacional</title>
     <link rel="stylesheet" href="styles.css">
@@ -21,19 +22,41 @@
 
             <nav class="nav" id="nav">
                 <ul class="menu">
-                    <li><a href="#">Home</a></li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-house"></i>
+                            Home
+                        </a>
+                    </li>
 
                     <li class="dropdown">
-                        <a href="#" id="btn-cursos">Cursos <span class="seta">▼</span></a>
+                        <a href="#" id="btn-cursos">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            Cursos
+                            <span class="seta">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </span>
+                        </a>
 
                         <ul class="dropdown-menu" id="menu-cursos">
-                            <li><a href="./ingles/">INGLÊS</a></li>
-                            <li><a href="./espanhol/">ESPANHOL</a></li>
+                            <li><a href="./ingles/">🇺🇸 Inglês</a></li>
+                            <li><a href="./espanhol/">🇪🇸 Espanhol</a></li>
                         </ul>
                     </li>
 
-                    <li><a href="#faq">Depoimentos & FAQ</a></li>
-                    <li><a href="#formContato">Contato</a></li>
+                    <li>
+                        <a href="#faq">
+                            <i class="fa-solid fa-circle-question"></i>
+                            Depoimentos & FAQ
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#formContato">
+                            <i class="fa-solid fa-envelope"></i>
+                            Contato
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -51,37 +74,62 @@
     </div>
 
     <section class="hero">
-        <div class="caixahero">
+
+        <div class="slides">
+
+            <div class="slide active" style="background-image:url('./assets/imagem fundo.jpg')">
+            </div>
+
+            <div class="slide" style="background-image:url('./assets/imagem fundo 2.jpg')">
+            </div>
+
+        </div>
+
+        <div class="mascara"></div>
+
+        <div class="hero-text">
+
             <h2>Aprender idiomas pode ser leve, natural e transformador</h2>
-            <p>Inglês, espanhol e alemão para todas as idades</p>
-            <a href="https://wa.me/555197692906?text=Olá, gostaria de agendar uma aula experimental!" class="btn">
+            <p>
+                Inglês, espanhol e alemão para todas as idades.
+            </p>
+            <a class="btn" href="https://wa.me/555197692906">
                 Agende sua aula experimental
             </a>
         </div>
+
     </section>
 
-    <h1 class="sobretitulo">Sobre a Prodigy Centro Educacional</h1>
     <section class="sobrecontainer">
-        <div>
-            <img src="./assets/section.png" alt="img" class="imgsobre">
-        </div>
-        <div class="sobre">
-            <h2>1. Quem Somos</h2>
-            <p> Nascemos com o propósito de tornar o aprendizado de idiomas algo leve, natural e acessível. Acreditamos
-                que aprender vai além da gramática: é sobre comunicação, confiança e vivência real. Oferecemos inglês,
-                espanhol e alemão com foco na prática desde o primeiro dia.</p>
-            <p>
-            <h2>2. Diferenciais e Apoio</h2>
-            <p> Mais do que cursos de idiomas, oferecemos um ambiente acolhedor e acompanhamento escolar
-                individualizado.
-                Nosso foco é fortalecer a base de aprendizagem de crianças, jovens e adultos, respeitando o ritmo de
-                cada aluno e transformando o estudo em uma experiência prazerosa.</p>
-            <h2>3. Missão, Visão e Valores</h2>
-            <p> Nossa missão é despertar o interesse pelo conhecimento através de métodos inovadores, formando alunos
-                protagonistas de suas próprias histórias. Valorizamos a ética, o pensamento crítico e a responsabilidade
-                social, buscando ser um centro educacional referência em inovação e criatividade.</p>
-        </div>
-        </div>
+        <h1 class="sobretitulo">
+            Sobre a Prodigy Centro Educacional
+        </h1>
+
+        <div class="sobre-grid">
+
+            <div class="sobre-imagem">
+                <img src="./assets/section.png" alt="Imagem da Prodigy" class="imgsobre">
+            </div>
+            <div class="sobre">
+                <h2>1. Quem Somos</h2>
+                <p> Nascemos com o propósito de tornar o aprendizado de idiomas algo leve, natural e acessível.
+                    Acreditamos
+                    que aprender vai além da gramática: é sobre comunicação, confiança e vivência real. Oferecemos
+                    inglês,
+                    espanhol e alemão com foco na prática desde o primeiro dia.</p>
+                <p>
+                <h2>2. Diferenciais e Apoio</h2>
+                <p> Mais do que cursos de idiomas, oferecemos um ambiente acolhedor e acompanhamento escolar
+                    individualizado.
+                    Nosso foco é fortalecer a base de aprendizagem de crianças, jovens e adultos, respeitando o ritmo de
+                    cada aluno e transformando o estudo em uma experiência prazerosa.</p>
+                <h2>3. Missão, Visão e Valores</h2>
+                <p> Nossa missão é despertar o interesse pelo conhecimento através de métodos inovadores, formando
+                    alunos
+                    protagonistas de suas próprias histórias. Valorizamos a ética, o pensamento crítico e a
+                    responsabilidade
+                    social, buscando ser um centro educacional referência em inovação e criatividade.</p>
+            </div>
     </section>
 
     <section class="chamada-professores container">
@@ -127,6 +175,63 @@
             </div>
         </div>
     </section>
+
+    <section class="galeria container">
+
+        <h2>Nossa Galeria</h2>
+        <p class="subtitle">
+            Alguns momentos da nossa escola.
+        </p>
+
+        <div class="masonry">
+
+            <div class="item">
+                <img src="./assets/imagem fundo.jpg">
+            </div>
+
+            <div class="item">
+                <img src="./assets/WhatsApp-Image-2026-06-08-at-22.47.58-_1__11zon.jpg">
+            </div>
+
+            <div class="item">
+                <img src="./assets/WhatsApp-Image-2026-06-08-at-22.47.58-_2__11zon.jpg">
+            </div>
+
+            <div class="item">
+                <img src="./assets/WhatsApp-Image-2026-06-08-at-22.47.58-_3__11zon.jpg">
+            </div>
+
+            <div class="item">
+                <img src="./assets/imagem fundo 2.jpg">
+            </div>
+
+            <div class="item">
+                <img src="./assets/WhatsApp-Image-2026-06-08-at-22.47.58-_5__11zon.jpg">
+            </div>
+
+            <div class="item">
+                <img src="./assets/WhatsApp-Image-2026-06-08-at-22.47.58-_6__11zon.jpg">
+            </div>
+
+            <div class="item">
+                <img src="./assets/WhatsApp-Image-2026-06-08-at-22.47.58-_7__11zon.jpg">
+            </div>
+
+            <div class="item">
+                <img src="./assets/WhatsApp-Image-2026-06-08-at-22.47.58-_8__11zon.jpg">
+            </div>
+
+        </div>
+    </section>
+
+    <div class="lightbox">
+
+        <span class="close">&times;</span>
+
+        <img class="lightbox-img">
+
+    </div>
+
 
     <div class="info-section" id="faq">
 

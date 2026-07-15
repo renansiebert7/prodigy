@@ -118,6 +118,19 @@ h3 {
     color: var(--primary);
 }
 
+.seta {
+    display: inline-flex;
+    align-items: center;
+}
+
+.seta i {
+    transition: transform .35s ease;
+}
+
+.seta.ativa i {
+    transform: rotate(180deg);
+}
+
 /* DROPDOWN */
 .dropdown {
     position: relative;
@@ -145,6 +158,19 @@ h3 {
 
 .dropdown-menu li a:hover {
     background: var(--bg-soft);
+}
+
+.seta {
+    display: inline-flex;
+    align-items: center;
+}
+
+.seta i {
+    transition: transform .35s ease;
+}
+
+.seta.ativa i {
+    transform: rotate(180deg);
 }
 
 /* ESTILOS GERAIS PARA PÁGINAS DE CURSOS (Inglês, Espanhol, Alemão)*/

@@ -118,6 +118,19 @@ h3 {
     color: var(--primary);
 }
 
+.seta {
+    display: inline-flex;
+    align-items: center;
+}
+
+.seta i {
+    transition: transform .35s ease;
+}
+
+.seta.ativa i {
+    transform: rotate(180deg);
+}
+
 /* DROPDOWN */
 .dropdown {
     position: relative;
