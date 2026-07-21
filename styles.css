@@ -376,53 +376,6 @@ h3 {
     transform: translateY(-3px);
 }
 
-/* CHAMADA PROFESSORES (HOME) */
-.chamada-professores {
-    padding: 80px 20px;
-}
-
-.professores-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 50px;
-    background: var(--bg-soft);
-    padding: 50px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-}
-
-.professores-texto span {
-    color: var(--primary);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 14px;
-}
-
-.professores-texto h2 {
-    font-size: 32px;
-}
-
-.professores-texto p {
-    color: var(--text-light);
-    margin-bottom: 30px;
-}
-
-.professores-imagem img {
-    width: 100%;
-    border-radius: var(--radius);
-    transition: 0.4s;
-}
-
-.professores-grid a {
-    text-decoration: none;
-}
-
-.professores-imagem img:hover {
-    transform: scale(1.02);
-}
-
 /* CURSOS */
 .cursos {
     text-align: center;
@@ -1210,16 +1163,6 @@ section:not(.hero),
     .card {
         width: 100%;
         max-width: 320px;
-    }
-
-    .professores-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: 30px 20px;
-    }
-
-    .professores-imagem {
-        order: -1;
     }
 
     .info-section {
