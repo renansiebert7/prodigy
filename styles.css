@@ -958,6 +958,10 @@ section:not(.hero),
         background-size: cover;
     }
 
+    .hero {
+        margin-top: 100px;
+    }
+
     .hero-text {
         width: 75%;
         padding: 30px;
