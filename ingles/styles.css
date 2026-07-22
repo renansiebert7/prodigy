@@ -140,6 +140,8 @@ h3 {
     position: absolute;
     top: 120%;
     left: 0;
+    margin: 0;
+    padding: 0;
     background: white;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
