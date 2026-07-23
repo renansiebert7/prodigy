@@ -53,11 +53,12 @@ h3 {
 .container {
     max-width: 1100px;
     margin: auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 /* HEADER (MODERNO) */
 .header {
+    height: 100px;
     position: fixed;
     width: 100%;
     top: 0;
@@ -165,10 +166,9 @@ h3 {
 .hero {
     position: relative;
     width: 100%;
-    height: calc(100vh - 100px);
-    margin-top: 120px;
+    height: calc(100svh - 100px); /* tira os 100px do header */
+    margin-top: 100px;            /* começa abaixo do header */
     overflow: hidden;
-    padding: 0;
 }
 
 .slides {
@@ -955,6 +955,7 @@ section:not(.hero),
     }
 
     .slide {
+        background-position: center center;
         background-size: cover;
     }
 
@@ -963,8 +964,9 @@ section:not(.hero),
     }
 
     .hero-text {
-        width: 75%;
-        padding: 30px;
+        width: 90%;
+        max-width: 340px;
+        padding: 22px;
     }
 
     .hero h2 {
