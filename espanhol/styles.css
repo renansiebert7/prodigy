@@ -53,11 +53,12 @@ h3 {
 .container {
     max-width: 1100px;
     margin: auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 /* HEADER (MODERNO) */
 .header {
+    height: 100px;
     position: fixed;
     width: 100%;
     top: 0;
