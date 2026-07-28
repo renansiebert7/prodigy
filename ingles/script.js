@@ -31,6 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* =========================================================
+   HEADER COM SOMBRA AO ROLAR (paridade com a Home)
+   ========================================================= */
+window.addEventListener("scroll", () => {
+    document.querySelector(".header")?.classList.toggle("scrolled", window.scrollY > 40);
+});
+
+/* =========================================================
    HERO — efeito de digitação com tradução
    ========================================================= */
 document.addEventListener("DOMContentLoaded", () => {

@@ -8,22 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuCursos = document.getElementById("menu-cursos");
     const seta = document.querySelector(".seta");
 
-    if (toggle && nav) {
-        toggle.addEventListener("click", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            nav.classList.toggle("active");
-        });
-    }
+    toggle?.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        nav.classList.toggle("active");
+    });
 
-    if (btnCursos && menuCursos) {
-        btnCursos.addEventListener("click", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            menuCursos.classList.toggle("active");
-            seta?.classList.toggle("ativa");
-        });
-    }
+    btnCursos?.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        menuCursos.classList.toggle("active");
+        seta?.classList.toggle("ativa");
+    });
 
     document.addEventListener("click", (e) => {
         if (nav && toggle && !nav.contains(e.target) && !toggle.contains(e.target)) {
@@ -46,18 +42,14 @@ window.addEventListener("scroll", () => {
 });
 
 /* =========================================================
-   HERO — palavra alternante ("Fale inglês / espanhol")
+   HERO — palavra alternante
    ========================================================= */
 document.addEventListener("DOMContentLoaded", () => {
     const el = document.querySelector(".hero-word");
     if (!el) return;
 
     let palavras;
-    try {
-        palavras = JSON.parse(el.dataset.words);
-    } catch {
-        return;
-    }
+    try { palavras = JSON.parse(el.dataset.words); } catch { return; }
     if (!palavras || palavras.length < 2) return;
 
     const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -75,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* =========================================================
-   HERO — cartão de conversa (EN / ES) + reinício da animação
+   HERO — cartão de conversa (EN / ES)
    ========================================================= */
 document.addEventListener("DOMContentLoaded", () => {
     const botoes = document.querySelectorAll(".lang-toggle button");
@@ -114,6 +106,60 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     renderizarConversa("en");
+});
+
+/* =========================================================
+   CURSOS — switcher (genérico: funciona com qualquer nº de abas)
+   ========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+    const tablist = document.querySelector(".cursos-tablist");
+    const indicador = document.querySelector(".tab-indicator");
+    const abas = document.querySelectorAll(".curso-tab");
+    const paineis = document.querySelectorAll(".curso-panel");
+    if (!tablist || !indicador || !abas.length) return;
+
+    function moverIndicador(aba) {
+        indicador.style.width = `${aba.offsetWidth}px`;
+        indicador.style.transform = `translateX(${aba.offsetLeft - 6}px)`;
+    }
+
+    function ativarAba(aba, { foco = false } = {}) {
+        abas.forEach(a => {
+            const ativa = a === aba;
+            a.classList.toggle("active", ativa);
+            a.setAttribute("aria-selected", ativa ? "true" : "false");
+            a.tabIndex = ativa ? 0 : -1;
+        });
+
+        paineis.forEach(painel => {
+            const deveMostrar = painel.id === aba.getAttribute("aria-controls");
+            painel.hidden = !deveMostrar;
+            painel.classList.toggle("active", deveMostrar);
+        });
+
+        moverIndicador(aba);
+        if (foco) aba.focus();
+    }
+
+    abas.forEach(aba => aba.addEventListener("click", () => ativarAba(aba)));
+
+    tablist.addEventListener("keydown", (e) => {
+        const atual = Array.from(abas).indexOf(document.activeElement);
+        if (atual === -1) return;
+
+        let proximo = null;
+        if (e.key === "ArrowRight") proximo = (atual + 1) % abas.length;
+        if (e.key === "ArrowLeft") proximo = (atual - 1 + abas.length) % abas.length;
+
+        if (proximo !== null) {
+            e.preventDefault();
+            ativarAba(abas[proximo], { foco: true });
+        }
+    });
+
+    const abaAtiva = document.querySelector(".curso-tab.active") || abas[0];
+    moverIndicador(abaAtiva);
+    window.addEventListener("resize", () => moverIndicador(document.querySelector(".curso-tab.active")));
 });
 
 /* =========================================================
@@ -158,18 +204,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     fechar?.addEventListener("click", () => lightbox.classList.remove("active"));
-
-    lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) lightbox.classList.remove("active");
-    });
-
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") lightbox.classList.remove("active");
-    });
+    lightbox.addEventListener("click", (e) => { if (e.target === lightbox) lightbox.classList.remove("active"); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") lightbox.classList.remove("active"); });
 });
 
 /* =========================================================
-   SCROLL REVEAL (elementos com a classe .reveal)
+   SCROLL REVEAL
    ========================================================= */
 document.addEventListener("DOMContentLoaded", () => {
     const alvos = document.querySelectorAll(".reveal");
@@ -229,58 +269,4 @@ document.addEventListener("DOMContentLoaded", () => {
                 submitBtn.innerText = textoOriginal;
             });
     });
-});
-
-/* =========================================================
-   CURSOS — switcher Inglês / Espanhol
-   ========================================================= */
-document.addEventListener("DOMContentLoaded", () => {
-    const tablist = document.querySelector(".cursos-tablist");
-    const indicador = document.querySelector(".tab-indicator");
-    const abas = document.querySelectorAll(".curso-tab");
-    const paineis = document.querySelectorAll(".curso-panel");
-    if (!tablist || !indicador || !abas.length) return;
- 
-    function moverIndicador(aba) {
-        indicador.style.width = `${aba.offsetWidth}px`;
-        indicador.style.transform = `translateX(${aba.offsetLeft - 6}px)`;
-    }
- 
-    function ativarAba(aba, { foco = false } = {}) {
-        abas.forEach(a => {
-            const ativa = a === aba;
-            a.classList.toggle("active", ativa);
-            a.setAttribute("aria-selected", ativa ? "true" : "false");
-            a.tabIndex = ativa ? 0 : -1;
-        });
- 
-        paineis.forEach(painel => {
-            const deveMostrar = painel.id === aba.getAttribute("aria-controls");
-            painel.hidden = !deveMostrar;
-            painel.classList.toggle("active", deveMostrar);
-        });
- 
-        moverIndicador(aba);
-        if (foco) aba.focus();
-    }
- 
-    abas.forEach(aba => aba.addEventListener("click", () => ativarAba(aba)));
- 
-    tablist.addEventListener("keydown", (e) => {
-        const atual = Array.from(abas).indexOf(document.activeElement);
-        if (atual === -1) return;
- 
-        let proximo = null;
-        if (e.key === "ArrowRight") proximo = (atual + 1) % abas.length;
-        if (e.key === "ArrowLeft") proximo = (atual - 1 + abas.length) % abas.length;
- 
-        if (proximo !== null) {
-            e.preventDefault();
-            ativarAba(abas[proximo], { foco: true });
-        }
-    });
- 
-    const abaAtiva = document.querySelector(".curso-tab.active") || abas[0];
-    moverIndicador(abaAtiva);
-    window.addEventListener("resize", () => moverIndicador(document.querySelector(".curso-tab.active")));
 });

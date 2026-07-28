@@ -46,9 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!elFrase || !elTraducao) return;
 
     const frases = [
-        { texto: "Ya puedo hablar español sin miedo a equivocarme.", traducao: "Você também vai se sentir assim." },
-        { texto: "Entendí toda la película sin subtítulos.", traducao: "É esse o tipo de progresso que buscamos." },
-        { texto: "¡Acabo de tener una conversación completa en español!", traducao: "E foi mais rápido do que você imagina." }
+        { texto: "Consegui entender a matéria sozinho essa semana!", traducao: "É esse tipo de autonomia que buscamos." },
+        { texto: "Tirei a melhor nota da turma em matemática.", traducao: "Resultado real de um aluno da Prodigy." },
+        { texto: "Finalmente entendi por que eu travava nas provas.", traducao: "E foi mais rápido do que você imagina." }
     ];
 
     const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
