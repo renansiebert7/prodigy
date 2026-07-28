@@ -1,0 +1,556 @@
+/* ===================================================================
+   PRODIGY — Curso de Espanhol (folha de estilos independente)
+   =================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+:root {
+    --primary: #d62828;
+    --primary-dark: #9d0208;
+    --accent: #ffba08;
+
+    --bg: #ffffff;
+    --bg-soft: #f7f7f7;
+    --bg-glass: rgba(255, 255, 255, 0.75);
+
+    --text: #1d1d1d;
+    --text-light: #666;
+
+    --radius: 18px;
+    --radius-sm: 10px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-lift: 0 25px 60px rgba(0, 0, 0, 0.16);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ===================================================================
+   HEADER
+   =================================================================== */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 9px 0;
+    transition: 0.3s ease;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid transparent;
+    z-index: -1;
+    transition: 0.3s ease;
+}
+
+.header.scrolled {
+    padding: 14px 0;
+}
+
+.header.scrolled::before {
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom-color: var(--border);
+}
+
+.logo {
+    height: 54px;
+    transition: 0.2s;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    list-style: none;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 0.92rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.menu a i {
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.25s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.menu a:hover {
+    color: var(--primary);
+}
+
+.seta {
+    display: inline-flex;
+}
+
+.seta i {
+    transition: transform 0.3s ease;
+}
+
+.seta.ativa i {
+    transform: rotate(180deg);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 130%;
+    left: 0;
+    margin: 0;
+    list-style: none;
+    background: var(--surface);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-lift);
+    padding: 8px;
+    min-width: 160px;
+    display: none;
+}
+
+.dropdown-menu.active {
+    display: block;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu li a::after {
+    display: none;
+}
+
+.dropdown-menu li a:hover {
+    background: var(--paper-alt);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--ink);
+}
+
+/* ===================================================================
+   SOCIAL FLUTUANTE
+   =================================================================== */
+.floating-social {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px;
+    z-index: 9999 !important;
+}
+
+.social-icon {
+    width: 50px;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.3));
+    transition: 0.3s;
+}
+
+.social-icon:hover { transform: scale(1.1); }
+
+/* ===================================================================
+   HERO — efeito de digitação (assinatura visual da página)
+   =================================================================== */
+.curso-page { padding-top: 0; }
+
+.curso-hero {
+    position: relative;
+    padding: 170px 20px 100px;
+    background: var(--bg-soft);
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+}
+
+.curso-hero-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 14px;
+}
+
+.tag img { width: 20px; border-radius: 3px; }
+
+.curso-hero h1 {
+    font-size: clamp(32px, 4.5vw, 50px);
+    color: var(--text);
+    margin: 6px 0 18px;
+}
+
+.desc-principal {
+    max-width: 480px;
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary);
+    color: #fff;
+    padding: 18px 34px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    box-shadow: 0 12px 26px rgba(214, 40, 40, 0.28);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px rgba(157, 2, 8, 0.32);
+}
+
+.btn-primary .arrow { transition: transform 0.25s ease; }
+.btn-primary:hover .arrow { transform: translateX(3px); }
+
+/* ---- Cartão de digitação ---- */
+.typing-card {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lift);
+    padding: 32px;
+    transform: rotate(1.2deg);
+}
+
+.typing-card-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #aaa;
+    margin-bottom: 14px;
+}
+
+.typing-phrase {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text);
+    min-height: 68px;
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    background: var(--primary);
+    margin-left: 2px;
+    animation: piscar 0.9s steps(1) infinite;
+}
+
+@keyframes piscar {
+    50% { opacity: 0; }
+}
+
+.typing-translation {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed #e2e2e2;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.typing-translation.visivel { opacity: 1; }
+
+/* ===================================================================
+   DIFERENCIAIS
+   =================================================================== */
+.curso-detalhes {
+    padding-top: 0;
+    margin-top: -60px;
+    margin-bottom: 60px;
+}
+
+.grid-detalhes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 26px;
+}
+
+.info-card {
+    background: #fff;
+    padding: 38px 30px;
+    border-radius: var(--radius);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f5f5f5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 2;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lift);
+}
+
+.info-card .icon {
+    font-size: 46px;
+    margin-bottom: 18px;
+    display: block;
+}
+
+.info-card h4 { font-size: 1.2rem; margin-bottom: 12px; }
+.info-card p { color: var(--text-light); font-size: 0.98rem; }
+
+/* ===================================================================
+   TEXTO EXPLICATIVO
+   =================================================================== */
+.curso-texto { background: var(--bg-soft); padding: 90px 20px; }
+
+.texto-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 56px;
+    border-radius: var(--radius);
+    border-left: 5px solid var(--primary);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+}
+
+.texto-wrapper h2 { font-size: 1.9rem; margin-bottom: 18px; }
+
+.texto-wrapper p {
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.link-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2px;
+    transition: 0.2s;
+}
+
+.link-cta:hover { color: var(--primary); border-color: var(--primary); }
+
+/* ===================================================================
+   CTA DE FECHAMENTO
+   =================================================================== */
+.cta-final {
+    background: var(--primary);
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.cta-final h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.cta-final p {
+    max-width: 480px;
+    margin: 0 auto 30px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-final .btn-primary {
+    background: #fff;
+    color: var(--primary);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.2);
+}
+
+.cta-final .btn-primary:hover {
+    background: var(--bg-soft);
+}
+
+/* ===================================================================
+   FOOTER
+   =================================================================== */
+.footer {
+    background: #830000;
+    color: white;
+}
+
+.footer-top { text-align: center; padding-top: 30px; }
+
+.footer-logo {
+    height: 100px;
+    filter: brightness(0) invert(1);
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 24px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 20px;
+}
+
+.footer-content h4 { color: #fff; font-size: 0.95rem; letter-spacing: 0.04em; }
+.footer-content p { color: rgba(255, 255, 255, 0.75); font-size: 0.9rem; }
+
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 20px;
+    font-size: 13px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.voltar-topo {
+    text-decoration: none;
+    color: #fff !important;
+    transition: opacity 0.3s;
+}
+
+.voltar-topo:hover { opacity: 0.7; text-decoration: underline; }
+
+/* ===================================================================
+   RESPONSIVO
+   =================================================================== */
+@media (max-width: 768px) {
+    .header .container { justify-content: space-between; }
+
+    .menu-toggle { display: block; }
+
+    .menu {
+        position: absolute;
+        top: 90px;
+        left: 20px;
+        right: 20px;
+        background: #fff;
+        flex-direction: column;
+        padding: 18px;
+        border-radius: var(--radius-sm);
+        box-shadow: var(--shadow-lift);
+        display: none;
+    }
+
+    .nav.active .menu { display: flex; }
+    .dropdown-menu { position: static; box-shadow: none; display: none; }
+    .dropdown-menu.active { display: block; }
+
+    .curso-hero { padding: 130px 20px 70px; }
+    .curso-hero-grid { grid-template-columns: 1fr; }
+    .typing-card { transform: none; margin-top: 20px; }
+
+    .curso-detalhes { margin-top: 30px; }
+    .texto-wrapper { padding: 32px; }
+}
+
+@media (max-width: 480px) {
+    .footer-content { padding: 20px 15px; }
+}
