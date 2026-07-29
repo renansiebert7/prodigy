@@ -753,7 +753,7 @@ h1, h2, h3, h4 { font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;
     .dropdown-menu { position: static; box-shadow: none; display: none; }
     .dropdown-menu.active { display: block; }
 
-    .hero { padding: 160px 20px 70px; }
+    .hero { padding: 130px 20px 70px; }
     .hero-bg-word { top: 10%; }
 
     .cursos-tablist { width: 100%; justify-content: flex-start; }
