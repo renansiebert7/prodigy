@@ -478,7 +478,7 @@ h1, h2, h3, h4 { font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;
     .dropdown-menu { position: static; box-shadow: none; display: none; }
     .dropdown-menu.active { display: block; }
 
-    .curso-hero { padding: 160px 20px 70px; }
+    .curso-hero { padding: 130px 20px 70px; }
     .curso-hero-grid { grid-template-columns: 1fr; }
     .typing-card { transform: none; margin-top: 20px; }
 
