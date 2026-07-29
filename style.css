@@ -60,7 +60,7 @@ h1, h2, h3, h4 { font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;
     top: 0;
     width: 100%;
     z-index: 999;
-    padding: 14px 0;
+    padding: 2px 0;
     transition: 0.3s ease;
 }
 
@@ -182,7 +182,7 @@ h1, h2, h3, h4 { font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;
 .hero {
     position: relative;
     padding: 190px 20px 110px;
-    background: var(--bg-soft);
+    background: var(--bg);
     overflow: hidden;
     border-bottom: 1px solid var(--border);
 }
@@ -193,7 +193,7 @@ h1, h2, h3, h4 { font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;
     top: 6%;
     left: 65%;
     transform: translateX(-50%);
-    font-size: clamp(48px, 14vw, 220px);
+    font-size: clamp(40px, 12vw, 220px);
     font-weight: 800;
     color: rgba(214, 40, 40, 0.06);
     white-space: nowrap;
@@ -342,7 +342,7 @@ h1, h2, h3, h4 { font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;
 /* ===================================================================
    SOBRE
    =================================================================== */
-.sobre-section { background: #fff; padding: 100px 20px; }
+.sobre-section { background: var(--bg-soft); padding: 100px 20px; }
 
 .sobre-grid {
     max-width: 1100px;
@@ -363,7 +363,7 @@ h1, h2, h3, h4 { font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;
 /* ===================================================================
    CURSOS — switcher (agora com 3 abas)
    =================================================================== */
-.cursos-section { background: var(--bg-soft); padding: 100px 20px 60px; }
+.cursos-section { background: var(--bg); padding: 100px 20px 60px; }
 
 .section-head { max-width: 620px; margin: 0 auto 40px; text-align: center; }
 .section-head p { color: var(--text-light); }
@@ -541,7 +541,7 @@ h1, h2, h3, h4 { font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;
 /* ===================================================================
    GALERIA (2 colunas no mínimo, nunca 1)
    =================================================================== */
-.galeria-section { background: #fff; padding: 100px 20px; }
+.galeria-section { background: var(--bg-soft); padding: 100px 20px; }
 
 .masonry { max-width: 1100px; margin: 0 auto; columns: 3 220px; column-gap: 16px; }
 
@@ -578,7 +578,7 @@ h1, h2, h3, h4 { font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;
 /* ===================================================================
    DEPOIMENTOS & FAQ
    =================================================================== */
-.info-section { background: var(--bg-soft); padding: 100px 20px; }
+.info-section { background: var(--bg); padding: 100px 20px; }
 
 .info-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
 
@@ -603,7 +603,7 @@ h1, h2, h3, h4 { font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;
 /* ===================================================================
    CONTATO
    =================================================================== */
-.contato-section { background: #fff; padding: 100px 20px; }
+.contato-section { background: var(--bg-soft); padding: 100px 20px; }
 
 .contato-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
 
@@ -726,9 +726,13 @@ h1, h2, h3, h4 { font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;
     .menu-toggle {
         display: block;
         position: absolute;
-        left: 20px;
+        right: 30px;
         top: 50%;
         transform: translateY(-50%);
+    }
+
+    .social-icon {
+        width: 40px;
     }
 
     .menu {

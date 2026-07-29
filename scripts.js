@@ -28,10 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
             seta?.classList.remove("ativa");
         }
     });
-
-    document.querySelectorAll('.menu a[href^="#"]').forEach(link => {
-        link.addEventListener("click", () => nav?.classList.remove("active"));
-    });
 });
 
 /* =========================================================
@@ -44,24 +40,67 @@ window.addEventListener("scroll", () => {
 /* =========================================================
    HERO — palavra alternante
    ========================================================= */
-document.addEventListener("DOMContentLoaded", () => {
-    const el = document.querySelector(".hero-word");
-    if (!el) return;
+// document.addEventListener("DOMContentLoaded", () => {
+//     const el = document.querySelector(".hero-word");
+//     if (!el) return;
 
-    let palavras;
-    try { palavras = JSON.parse(el.dataset.words); } catch { return; }
-    if (!palavras || palavras.length < 2) return;
+//     let palavras;
+//     try { palavras = JSON.parse(el.dataset.words); } catch { return; }
+//     if (!palavras || palavras.length < 2) return;
+
+//     const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+//     if (reduzMovimento) return;
+
+//     let i = 0;
+//     setInterval(() => {
+//         el.classList.add("swap");
+//         setTimeout(() => {
+//             i = (i + 1) % palavras.length;
+//             el.textContent = palavras[i];
+//             el.classList.remove("swap");
+//         }, 250);
+//     }, 2600);
+// });
+
+/* =========================================================
+   HERO — palavras alternantes sincronizadas
+   ========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+    const elHero = document.querySelector(".hero-word");
+    const elWord = document.querySelector(".word");
+
+    if (!elHero || !elWord) return;
+
+    let palavrasHero, palavrasWord;
+
+    try {
+        palavrasHero = JSON.parse(elHero.dataset.words); // ex: ["Inglês", "Espanhol"]
+        palavrasWord = JSON.parse(elWord.dataset.words); // ex: ["Speak", "Hablar"]
+    } catch {
+        return;
+    }
+
+    if (!palavrasHero || !palavrasWord || palavrasHero.length !== palavrasWord.length) return;
 
     const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduzMovimento) return;
 
     let i = 0;
     setInterval(() => {
-        el.classList.add("swap");
+        // Adiciona a animação de transição em ambos
+        elHero.classList.add("swap");
+        elWord.classList.add("swap");
+
         setTimeout(() => {
-            i = (i + 1) % palavras.length;
-            el.textContent = palavras[i];
-            el.classList.remove("swap");
+            i = (i + 1) % palavrasHero.length;
+
+            // Atualiza o texto de ambos os elementos em sincronia
+            elHero.textContent = palavrasHero[i];
+            elWord.textContent = palavrasWord[i];
+
+            // Remove a classe para finalizar o efeito visual
+            elHero.classList.remove("swap");
+            elWord.classList.remove("swap");
         }, 250);
     }, 2600);
 });
