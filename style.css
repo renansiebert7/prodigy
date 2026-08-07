@@ -181,7 +181,7 @@ h1, h2, h3, h4 { font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;
    =================================================================== */
 .hero {
     position: relative;
-    padding: 190px 20px 110px;
+    padding: 160px 20px 110px;
     background: var(--bg);
     overflow: hidden;
     border-bottom: 1px solid var(--border);
@@ -287,6 +287,7 @@ h1, h2, h3, h4 { font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;
     padding: 26px;
     max-width: 400px;
     margin-left: auto;
+    margin-bottom: 100px;
     transform: rotate(1.2deg);
 }
 
@@ -707,7 +708,7 @@ h1, h2, h3, h4 { font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;
 @media (max-width: 900px) {
     .hero-grid, .sobre-grid, .info-grid, .contato-grid, .curso-panel-grid { grid-template-columns: 1fr; }
     .sobre-imagem { position: static; max-height: 340px; }
-    .chat-card { margin-left: 0; max-width: 100%; }
+    .chat-card { margin-left: 0; margin-bottom: 0px; max-width: 100%; }
     .curso-emblem { order: -1; }
     .online-banner-inner { text-align: center; justify-content: center; }
 }
