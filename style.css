@@ -259,6 +259,30 @@ h1, h2, h3, h4 { font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;
 .btn-primary .arrow { transition: transform 0.25s ease; }
 .btn-primary:hover .arrow { transform: translateX(3px); }
 
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #1a1717;
+    color: #fff;
+    padding: 16px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    box-shadow: 0 12px 26px rgba(68, 63, 63, 0.28);
+    border: none;
+}
+
+.btn-secondary:hover {
+    background: #32312e;
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px rgba(59, 55, 55, 0.32);
+}
+
+.btn-secondary .arrow { transition: transform 0.25s ease; }
+.btn-secondary:hover .arrow { transform: translateX(3px); } 
+
 .btn-link {
     display: inline-flex;
     align-items: center;
@@ -766,8 +790,11 @@ h1, h2, h3, h4 { font-weight: 700; margin-bottom: 10px; letter-spacing: -0.01em;
     .formContato { grid-template-columns: 1fr; }
     #formContato { padding: 30px; }
 
-    /* Galeria: nunca cai para 1 coluna */
     .masonry { columns: 2; column-gap: 10px; }
+
+    .hero-actions { gap: 15px }
+    .btn-primary { width: 80%; height: 60px; justify-content: center; }
+    .btn-secondary { width: 80%; height: 50px; justify-content: center; }
 }
 
 @media (max-width: 480px) {

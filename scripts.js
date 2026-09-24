@@ -40,27 +40,27 @@ window.addEventListener("scroll", () => {
 /* =========================================================
    HERO — palavra alternante
    ========================================================= */
-// document.addEventListener("DOMContentLoaded", () => {
-//     const el = document.querySelector(".hero-word");
-//     if (!el) return;
+document.addEventListener("DOMContentLoaded", () => {
+    const el = document.querySelector(".hero-word");
+    if (!el) return;
 
-//     let palavras;
-//     try { palavras = JSON.parse(el.dataset.words); } catch { return; }
-//     if (!palavras || palavras.length < 2) return;
+    let palavras;
+    try { palavras = JSON.parse(el.dataset.words); } catch { return; }
+    if (!palavras || palavras.length < 2) return;
 
-//     const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-//     if (reduzMovimento) return;
+    const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduzMovimento) return;
 
-//     let i = 0;
-//     setInterval(() => {
-//         el.classList.add("swap");
-//         setTimeout(() => {
-//             i = (i + 1) % palavras.length;
-//             el.textContent = palavras[i];
-//             el.classList.remove("swap");
-//         }, 250);
-//     }, 2600);
-// });
+    let i = 0;
+    setInterval(() => {
+        el.classList.add("swap");
+        setTimeout(() => {
+            i = (i + 1) % palavras.length;
+            el.textContent = palavras[i];
+            el.classList.remove("swap");
+        }, 250);
+    }, 2600);
+});
 
 /* =========================================================
    HERO — palavras alternantes sincronizadas
